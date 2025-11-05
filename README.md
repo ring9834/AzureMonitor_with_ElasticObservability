@@ -1,15 +1,15 @@
 # Azure Monitor Combined with Elastic Observability
 
 ## Steps for sets up
-Create Azure Resources
+:dog:Create Azure Resources
 
-Connect Azure Monitor to Elastic Cloud
+:dog2:Connect Azure Monitor to Elastic Cloud
 
-Deploy Elastic Agent on AKS
+:guide_dog:Deploy Elastic Agent on AKS
 
-APM Tracing for App in AKS
+:service_dog:APM Tracing for App in AKS
 
-Set Alerts in Elastic
+:cat2:Set Alerts in Elastic
 
 ## Create Azure Resources
 Variables
