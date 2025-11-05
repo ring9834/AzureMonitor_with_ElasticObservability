@@ -144,9 +144,9 @@ Add Elastic APM configuration in appsettings.json
 ```sh
 {
   "ElasticApm": {
-    "ServerUrls": " https://cls-elastic-f5d375.apm.us-central1.gcp.cloud.es.io:443",
-    "SecretToken": " RW98kZKX43STaiMzHYCWE70Wgt",
-    "ServiceName": "cls-api ",
+    "ServerUrls": "https://cls-elastic-f5d375.apm.us-central1.gcp.cloud.es.io:443",
+    "SecretToken": "RW98kZKX43STaiMzHYCWE70Wgt",
+    "ServiceName": "dotnet-api-cls",
     "Environment": "production"
   }
 }
@@ -184,11 +184,11 @@ spec:
         - name: ASPNETCORE_URLS
           value: "http://+:80"
         - name: ElasticApm__ServerUrls
-          value: "https://your-apm-url:443"
+          value: "https://cls-elastic-f5d375.apm.us-central1.gcp.cloud.es.io:443"
         - name: ElasticApm__SecretToken
-          value: "YOUR_SECRET_TOKEN"
+          value: "RW98kZKX43STaiMzHYCWE70Wgt"
         - name: ElasticApm__ServiceName
-          value: "dotnet-api-demo"
+          value: "dotnet-api-cls"
         - name: ElasticApm__Environment
           value: "production"
 ---
