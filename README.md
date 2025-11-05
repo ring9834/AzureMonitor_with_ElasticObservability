@@ -198,7 +198,7 @@ metadata:
   name: cls-apm-service
 spec:
   selector:
-    app: cls-apm-cls
+    app: dotnet-apm-cls
   ports:
     - protocol: TCP
       port: 80
