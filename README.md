@@ -50,8 +50,8 @@ az elastic monitor create \
   --name "elastic-monitoring" \
   --resource-group $RESOURCE_GROUP \
   --location $LOCATION \
-  --elastic-cloud-id " Cls_Elastic:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvOjQ0MyQ43MjFjYWI2YjIzNzc0MmQxYjU5NDBlMzczOTk89OTNmNyRlNWQyOTY4MmE1NjE0NjYyOTkwNjI0MmFmOGI5YjMxNQ==" \
-  --elastic-apm-key " essu_U43kU1NWVmFiMEpCWjNkWFZWaHpWRFZEY89kwNlJWaFRTMGRHVWxVMWJuQTJNRE0zTTJsUGVFUkdRUT09AAAAAOzgMYM= "
+  --elastic-cloud-id "Cls_Elastic:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvOjQ0MyQ43MjFjYWI2YjIzNzc0MmQxYjU5NDBlMzczOTk89OTNmNyRlNWQyOTY4MmE1NjE0NjYyOTkwNjI0MmFmOGI5YjMxNQ==" \
+  --elastic-apm-key "essu_U43kU1NWVmFiMEpCWjNkWFZWaHpWRFZEY89kwNlJWaFRTMGRHVWxVMWJuQTJNRE0zTTJsUGVFUkdRUT09AAAAAOzgMYM= "
 ```
 This will stream Azure resource logs and metrics automatically.
 
@@ -60,7 +60,7 @@ Now, deploy Elastic Agent to collect cluster-level logs and metrics. The Elastic
 This command used to create a Secret object in our cluster to securely store our Elastic API key for use by pods or applications running inside Kubernetes.
 ```sh
 kubectl create secret generic elastic-credentials \
-  --from-literal=api_key=" essu_U43kU1NWVmFiMEpCWjNkWFZWaHpWRFZEY89kwNlJWaFRTMGRHVWxVMWJuQTJNRE0zTTJsUGVFUkdRUT09AAAAAOzgMYM= "
+  --from-literal=api_key="essu_U43kU1NWVmFiMEpCWjNkWFZWaHpWRFZEY89kwNlJWaFRTMGRHVWxVMWJuQTJNRE0zTTJsUGVFUkdRUT09AAAAAOzgMYM= "
 ```
 
 Create a DaemonSet manifest 
@@ -90,7 +90,7 @@ spec:
                 name: elastic-credentials
                 key: api_key
           - name: FLEET_URL
-            value: " https://cls-elastic-f5d375.fleet.us-central1.gcp.cloud.es.io:443"
+            value: "https://cls-elastic-f5d375.fleet.us-central1.gcp.cloud.es.io:443"
           - name: KIBANA_FLEET_SETUP
             value: "1"
           - name: ELASTIC_AGENT_LOG_LEVEL
