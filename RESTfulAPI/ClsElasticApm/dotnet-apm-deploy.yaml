@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnet-apm-cls
+  labels:
+    app: dotnet-apm- cls
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnet-apm- cls
+  template:
+    metadata:
+      labels:
+        app: dotnet-apm- cls
+    spec:
+      containers:
+      - name: dotnet-apm- cls
+        image: https://app.docker.com/accounts/ring9834/elastic-apm-dotnet:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: ASPNETCORE_URLS
+          value: "http://+:80"
+        - name: ElasticApm__ServerUrls
+          value: "https://your-apm-url:443"
+        - name: ElasticApm__SecretToken
+          value: "YOUR_SECRET_TOKEN"
+        - name: ElasticApm__ServiceName
+          value: "dotnet-api-demo"
+        - name: ElasticApm__Environment
+          value: "production"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cls-apm-service
+spec:
+  selector:
+    app: cls-apm-cls
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer

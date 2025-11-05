@@ -1,0 +1,6 @@
+@WellingtonWeatherRecommendationApi_HostAddress = http://localhost:5101
+
+GET {{WellingtonWeatherRecommendationApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
